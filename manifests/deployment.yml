@@ -16,5 +16,6 @@ spec:
       containers:
         - name: app1nginxaks 
           image: aksdevopsacr.azurecr.io/app1nginxaks
+          imagePullPolicy: Always
           ports:
           - containerPort: 80
