@@ -1,10 +1,8 @@
-apiVersion : apps/v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1nginxaks 
-  namespace: default
+  name: app1nginxaks
 spec:
-  progressDeadlineSeconds: 3600
   replicas: 1
   selector:
     matchLabels:
@@ -12,11 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: app1nginxaks 
+        app: app1nginxaks
     spec:
       containers:
-        - name: app1nginxaks 
+        - name: app1nginxaks
           image: aksdevopsacr.azurecr.io/app1nginxaks
-          imagePullPolicy: Always
           ports:
           - containerPort: 80
